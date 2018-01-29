@@ -1,0 +1,32 @@
+@import './partials/variables';
+@import './partials/animations';
+
+@function headings($from:1, $to:6) {
+    @if $from == $to {
+        @return 'h#{$from}';
+    } @else {
+        @return 'h#{$from},' + headings($from+1, $to);
+    }
+}
+.debug {
+  position: fixed;
+  top: 0px;
+  width: 50%;
+  height: 150px;
+  background-color: rgba(#ffffff, 0.44);
+  font-size: 34px;
+  color: rgb(133, 0, 103);
+  z-index: 999999;
+  word-wrap: break-word;
+
+  &.left {
+    left: 0px;
+  }
+  &.right {
+    right: 0px;
+  }
+}
+* {
+  // h-length, v-length, blur, spread, colour
+  // box-shadow: none !important;
+}
